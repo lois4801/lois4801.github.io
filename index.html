@@ -10,16 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#101010;
-  --bg2:#0a0a0a;
-  --ink:#f2f2f2;
-  --dim:#999;
-  --faint:#5a5a5a;
-  --line:#242424;
-  --gold:#ffca34;
-  --cyan:#00d5e9;
-  --green:#7feb00;
-  --pink:#ff5872;
+  --bg:#050505;
+  --bg2:#000000;
+  --ink:#f5f5f7;
+  --dim:#a1a1a6;
+  --faint:#6e6e73;
+  --line:#2c2c2e;
+  --gold:#ff375f;
+  --cyan:#64d2ff;
+  --green:#30d158;
+  --pink:#bf5af2;
   --grot:'Space Grotesk',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
   --mono:'JetBrains Mono',ui-monospace,'Courier New',monospace;
 }
@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- cursor ---------- */
 .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;will-change:transform}
 .cursor-dot{width:6px;height:6px;background:var(--gold)}
-.cursor-ring{width:34px;height:34px;border:1px solid rgba(255,202,52,.5);transition:width .25s,height .25s,border-color .25s;display:flex;align-items:center;justify-content:center}
+.cursor-ring{width:34px;height:34px;border:1px solid rgba(255,55,95,.55);transition:width .25s,height .25s,border-color .25s;display:flex;align-items:center;justify-content:center}
 .cursor-ring .cursor-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#000;opacity:0;text-transform:uppercase}
 .cursor-ring.is-link{width:64px;height:64px;background:var(--gold);border-color:var(--gold)}
 .cursor-ring.is-link .cursor-label{opacity:1}
@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 .loader-word span{display:inline-block;animation:blurpulse 1.6s ease-in-out infinite;opacity:.15}
 @keyframes blurpulse{0%,100%{filter:blur(0);opacity:.15}50%{filter:blur(6px);opacity:1}}
 .loader-track{width:min(320px,60vw);height:1px;background:#2a2a2a;position:relative;overflow:hidden}
-.loader-bar{position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+.loader-bar{position:absolute;inset:0;background:linear-gradient(90deg,#ff375f,#ff9f0a,#30d158,#64d2ff,#bf5af2);transform-origin:left;transform:scaleX(0)}
 .loader-pct{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.2em}
 
 /* ---------- header ---------- */
@@ -71,10 +71,10 @@ nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(16px,3vw,40px) clamp(28px,5vh,56px);overflow:hidden;background:var(--bg2)}
 .hero-bg{position:absolute;inset:0;will-change:transform;opacity:.9;
   background:
-    radial-gradient(ellipse 60% 45% at 82% 18%, rgba(255,202,52,.14), transparent 60%),
-    radial-gradient(ellipse 45% 38% at 12% 85%, rgba(0,213,233,.07), transparent 65%),
-    radial-gradient(ellipse 35% 30% at 60% 60%, rgba(255,88,114,.05), transparent 70%),
-    radial-gradient(ellipse 120% 90% at 50% 40%, #161616 0%, #0a0a0a 70%)}
+    radial-gradient(ellipse 60% 45% at 82% 18%, rgba(255,55,95,.15), transparent 60%),
+    radial-gradient(ellipse 45% 38% at 12% 85%, rgba(100,210,255,.08), transparent 65%),
+    radial-gradient(ellipse 35% 30% at 60% 60%, rgba(191,90,242,.06), transparent 70%),
+    radial-gradient(ellipse 120% 90% at 50% 40%, #101010 0%, #000000 70%)}
 .hero-bg::after{content:"";position:absolute;inset:0;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E")}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.92) 100%)}
@@ -133,7 +133,7 @@ section{padding:clamp(72px,12vh,140px) clamp(16px,3vw,40px)}
 /* bars */
 .bars{display:flex;align-items:flex-end;gap:clamp(10px,2vw,26px);height:240px;border-bottom:1px solid var(--line);padding-bottom:0}
 .bar-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;height:100%}
-.bar{width:100%;max-width:74px;background:linear-gradient(180deg,var(--gold),rgba(255,202,52,.25));transform:scaleY(0);transform-origin:bottom;position:relative}
+.bar{width:100%;max-width:74px;background:linear-gradient(180deg,#ff9f0a,#ff375f);transform:scaleY(0);transform-origin:bottom;position:relative}
 .bar.zero{background:#2a2a2a}
 .bar-count{position:absolute;top:-26px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--ink);opacity:0}
 .bar-year{position:absolute;bottom:-30px;font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.1em}
@@ -367,7 +367,7 @@ footer{padding:clamp(90px,16vh,180px) clamp(16px,3vw,40px) 40px;text-align:left;
     </a>
 
     <a class="work-card rv" href="https://github.com/lois4801/SIF_Project-Safety-AI" target="_blank" rel="noopener" data-cursor>
-      <div class="work-top"><span class="work-index">/ 05</span><span class="work-lang"><i style="background:#8a8a8a"></i>Safety Analytics</span></div>
+      <div class="work-top"><span class="work-index">/ 05</span><span class="work-lang"><i style="background:#a1a1a6"></i>Safety Analytics</span></div>
       <h3 class="work-title">SIF — Safety AI</h3>
       <p class="work-desc">Serious-injury and fatality analysis for electrical &amp; power operations — modeling the variables behind hazards, risks, and prevention.</p>
       <div class="work-tagrow"><span class="work-tag">Root cause</span><span class="work-tag">Risk factors</span><span class="work-tag">Energy sector</span></div>
@@ -378,7 +378,7 @@ footer{padding:clamp(90px,16vh,180px) clamp(16px,3vw,40px) 40px;text-align:left;
     </a>
 
     <a class="work-card rv" href="https://github.com/lois4801/Altor.Pizza-ER.Modeling.and.Schema-to-GoogleLookerStudio" target="_blank" rel="noopener" data-cursor>
-      <div class="work-top"><span class="work-index">/ 06</span><span class="work-lang"><i style="background:#ffca34"></i>SQL → Looker</span></div>
+      <div class="work-top"><span class="work-index">/ 06</span><span class="work-lang"><i style="background:#ff9f0a"></i>SQL → Looker</span></div>
       <h3 class="work-title">Altor Pizza — ER to Dashboard</h3>
       <p class="work-desc">Business requirements → schema design → SQL → cleaning → modeling → a Google Looker Studio dashboard. The most-starred repo on the profile.</p>
       <div class="work-tagrow"><span class="work-tag">ER modeling</span><span class="work-tag">SQL</span><span class="work-tag">Looker Studio</span></div>
@@ -582,11 +582,11 @@ document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
 
 /* ============ DONUT ============ */
 var donutData=[
-  {name:'Data Analytics & BI',      value:12, color:'#ffca34'},
-  {name:'Machine Learning & DS',    value:11, color:'#00d5e9'},
-  {name:'AI Platforms & Agents',    value:8,  color:'#7feb00'},
-  {name:'Learning & Resources',     value:9,  color:'#ff5872'},
-  {name:'Industry & Safety',        value:6,  color:'#8a8a8a'}
+  {name:'Data Analytics & BI',      value:12, color:'#ff9f0a'},
+  {name:'Machine Learning & DS',    value:11, color:'#64d2ff'},
+  {name:'AI Platforms & Agents',    value:8,  color:'#30d158'},
+  {name:'Learning & Resources',     value:9,  color:'#bf5af2'},
+  {name:'Industry & Safety',        value:6,  color:'#ff375f'}
 ];
 var total=donutData.reduce(function(a,b){return a+b.value;},0);
 var svg=document.getElementById('donutSvg'), R=47, C=2*Math.PI*R, acc=0, circles=[];
@@ -657,10 +657,10 @@ bio.observe(bars);
 
 /* ============ LANGUAGE STRIP ============ */
 var langs=[
-  {name:'SQL · BI · Docs', v:31, color:'#4a4a4a'},
-  {name:'Jupyter Notebook',v:11, color:'#ffca34'},
-  {name:'Python',          v:3,  color:'#00d5e9'},
-  {name:'JavaScript',      v:1,  color:'#7feb00'}
+  {name:'SQL · BI · Docs', v:31, color:'#48484a'},
+  {name:'Jupyter Notebook',v:11, color:'#ff9f0a'},
+  {name:'Python',          v:3,  color:'#64d2ff'},
+  {name:'JavaScript',      v:1,  color:'#30d158'}
 ];
 var lt=document.getElementById('langTrack'), ll=document.getElementById('langLabels');
 var ltot=langs.reduce(function(a,b){return a+b.v;},0);
@@ -694,9 +694,10 @@ if(!reduced){
     cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
   }
   resize(); addEventListener('resize',resize);
+  var PC=['#ff375f','#ff9f0a','#30d158','#64d2ff','#bf5af2'];
   var N=Math.min(90,Math.round(W*H/16000));
   for(var i=0;i<N;i++){
-    pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+.6});
+    pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+.6,c:PC[i%PC.length]});
   }
   cv.parentElement.addEventListener('mousemove',function(e){
     var r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
@@ -719,12 +720,12 @@ if(!reduced){
         var b=pts[j], ddx=a.x-b.x, ddy=a.y-b.y, d2=ddx*ddx+ddy*ddy;
         if(d2<15625){
           var o=(1-Math.sqrt(d2)/125)*0.34;
-          ctx.strokeStyle='rgba(255,202,52,'+o+')';
+          ctx.strokeStyle='rgba(245,245,247,'+(o*.45)+')';
           ctx.lineWidth=.6;
           ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
         }
       }
-      ctx.fillStyle='rgba(255,202,52,.85)';
+      ctx.fillStyle=a.c;
       ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,6.283); ctx.fill();
     }
   })();
